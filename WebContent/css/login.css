@@ -1,0 +1,309 @@
+body, html {
+	margin:0px;
+	padding:0px;
+	height:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+.login_bg {
+	background:url(../images/bluebg.jpg) repeat-x;
+	height:100%;
+	width: 100%;
+}
+.loginBottom {
+	background:url(../images/login_bottom.png) no-repeat;
+}
+#content {
+	position:relative;
+	z-index:1;
+	width:600px;
+	top:25%;
+	left:25%;
+}
+#signInLogo {
+	float:left;
+	width:240px;
+	font-size:9px;
+	margin-top:-20px;
+}
+#signIn {
+	height: 185px;
+	float:left;
+	padding-left:20px;
+	padding-top:0px;
+}
+#logo {
+	font-family:Times New Roman;
+	font-size:48px;
+	color:#fff;
+}
+#signIn label {
+	display:block;
+	font-family:verdana;
+	font-size:9px;
+}
+#signIn input {
+	display:block;
+	font-family:verdana;
+	margin:5px 5px 5px 0px;
+}
+#signIn input.txtbox {
+	width:150px;
+	background:url(../images/text_box_bg.gif);
+	border:solid 1px #ccc;
+}
+.login_logo_box {
+	vertical-align:Middle;
+	width:250px;
+	background:url(../images/login_divider.gif) no-repeat right 10px;
+}
+.hand_cursor {
+	cursor: pointer;
+}
+.login_table {
+	height:200px;
+	width:528px;
+	background:url(../images/login_table_bg.gif) no-repeat
+}
+#login_copyright {
+	color:#FFF;
+	text-align:right;
+	padding-top:0px;
+}
+#login_best_view {
+	color:#fff;
+	height: 30px;
+	padding: 0px 5px 0 5px;
+	margin-top:6px;
+ #margin-top:5px;
+	_margin-top:5px;
+	font-size:10px;
+}
+.login_shadow-trans {
+	background:url(../images/login_bottom.png) no-repeat 0 bottom;
+	_background:none;
+	width:710px;
+	margin:0 auto;
+	padding-bottom:2px;
+}
+select {
+	font-size:11px
+}
+/*Style Tool Tip*/
+a.tooltip {
+	/* for postioning the tool-tip box relative to the link */
+    position:relative;
+	/* no underline needed */
+    text-decoration: none;
+	cursor:help;
+}
+a.tooltip span {
+	/* tool-tip text will not be visible initially */
+    display: none;
+}
+a.tooltip:hover span {
+	/* make tool-tip text visible */
+    display:block;
+	/* for postioning */
+    position:absolute;
+	top:25px;
+	left:20px;
+	padding: 10px;
+	padding-left:60px;
+	/* width of the tool-tip box
+    if text is longer, it will be
+    made into two lines */
+    width:250px;
+	/* style the box to look like a tool-tip box */
+    border:1px solid #CCC;
+	background:#fff url(../images/Optimization.png) 5px 5px no-repeat;
+	font-size:12px;
+	color:#000;
+}
+.whitetext {
+	color:#fff;
+}
+.whitetext:hover {
+	color:#ccc;
+}
+.h5 {
+	font-size:1.2em;
+}
+.footer_left {
+	float:left;
+	width: 49%;
+	margin: -3px 0px 0px 0px;
+	padding: 2px 0px 0px 5px;
+}
+.footer_right {
+	float:right;
+	width: 49%;
+	padding-right: 5px;
+}
+.submit {
+	background:url(../images/sign_in_button.gif) no-repeat;
+	border: 0px;
+	width: 79px;
+	height: 22px;
+}
+.login_shadow-trans1 {
+	background:url(../images/login_bottom.png) no-repeat 0 bottom;
+	_background:none;
+	width:710px;
+	margin:0 auto;
+	padding-bottom:2px;
+}
+a.tooltip1 {	/* for postioning the tool-tip box relative to the link */
+	position:relative;
+	/* no underline needed */
+    text-decoration: none;
+	cursor:help;
+}
+.login_shadow-trans11 {
+	background:url(../images/login_bottom.png) no-repeat 0 bottom;
+	_background:none;
+	width:710px;
+	margin:0 auto;
+	padding-bottom:2px;
+}
+.login_messages {
+	_background:none;
+	width:710px;
+	margin:0 auto;
+	padding-bottom:2px;
+}
+#overlay {
+	width:100%;
+	height:100%;
+	left:0px;
+	top:0px;
+	position:fixed;
+	z-index:40;
+	bottom:0px;
+	_position:absolute;
+	_bottom:none;
+ _top:expression(document.documentElement.scrollTop + document.documentElement.clientHeight - offsetHeight);
+ _left:expression(document.documentElement.scrollLeft + document.documentElement.clientWidth - offsetWidth);
+	background-color: #000;
+	filter:alpha(opacity=20);
+	-moz-opacity: 0.2;
+	opacity: 0.2;
+}
+.ws_table {
+}
+.ws_top_left {
+	background:url(../images/top_left_ws.gif) no-repeat 0px bottom;
+	width:12px;
+	FONT-SIZE:0PX;
+	width: 10px !important;
+	height:10px !important;
+}
+.ws_top_x {
+	background: #FFF url(../images/top_x_ws.gif) repeat-x 0px bottom;
+	FONT-SIZE:0PX;
+	height:10px !important;
+}
+.ws_top_right {
+	background:url(../images/top_right_ws.gif) no-repeat 0px bottom;
+	width:10px !important;
+	HEIGHT:10PX !important;
+	FONT-SIZE:0PX;
+}
+.ws_left_y {
+	background: #FFF url(../images/left_y_ws.gif) left bottom no-repeat;
+	border-left: 1px solid #b5b5b5;
+}
+.ws_right_y {
+	background: #FFF url(../images/right_y_ws.gif) left bottom no-repeat;
+	border-right: 1px solid #b5b5b5;
+}
+.ws_bottom_left {
+	background:url(../images/bottom_left_ws.gif) no-repeat;
+	width: 10px !important;
+	height:6px !important;
+}
+.ws_bottom_x {
+	background:url(../images/bottom_x_ws.gif) repeat-x;
+}
+.ws_bottom_right {
+	background:url(../images/bottom_right_ws.gif) no-repeat;
+	width:10px !important;
+	height:6px !important;
+}
+.ws_middle {
+	background: #FFF url(../images/ws_middle.gif) left bottom repeat-x;
+	vertical-align:top;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+.pop_up_title {
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+}
+.pp_buttons {
+	position:absolute;
+	right:12px;
+	top:8px;
+	float:right;
+	white-space:nowrap;
+}
+.pp_buttons a {
+	cursor:pointer;
+}
+.handle {
+	cursor:move;
+	height:20px;
+}
+.red {
+	color: #FF0000 !important;
+}
+.bold_text {
+	font-weight:bold;
+}
+input {
+	font-size:1.0em;
+}
+
+.info, .success, .warning, .error, .validation {
+border: 1px solid;
+margin: 10px 0px;
+padding:15px 10px 15px 50px;
+background-repeat: no-repeat;
+background-position: 10px center;
+}
+.info {
+color: #00529B;
+background-color: #BDE5F8;
+background-image: url('../images/info-icon.png');
+}
+.success {
+color: #4F8A10;
+background-color: #DFF2BF;
+background-image:url('success.png');
+}
+.warning {
+color: #9F6000;
+background-color: #FEEFB3;
+background-image: url('warning.png');
+}
+.error {
+color: #D8000C;
+background-color: #FFBABA;
+background-image: url('error.png');
+}

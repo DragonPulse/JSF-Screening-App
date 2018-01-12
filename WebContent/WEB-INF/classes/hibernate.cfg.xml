@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+		<property name="show_sql">true</property>
+		<mapping class="com.ness.screening.entity.Candidate" />
+    	<mapping class="com.ness.screening.entity.CandidateScreenDetails" />
+    	<mapping class="com.ness.screening.entity.DocumentsDetails" />
+    	<mapping class="com.ness.screening.entity.User" />
+    	<mapping class="com.ness.screening.entity.UserRole" />
+    	<mapping class="com.ness.screening.entity.Vendor" />
+    	<mapping class="com.ness.screening.entity.AppCode" />
+    	<mapping class="com.ness.screening.entity.Client" />
+    	<mapping class="com.ness.screening.entity.JobRequirements" />
+	</session-factory>
+</hibernate-configuration>

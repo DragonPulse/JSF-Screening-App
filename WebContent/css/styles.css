@@ -1,0 +1,66 @@
+/* Purpose of document: This is the WAHBE Theme CSS. */
+
+html { height: 100%; }
+body { font-family: 'Cabin Sans Regular'; background: #8dc245; color: #565656; padding-top: 0px; font-size: 1.5em; line-height: 22px; height: 100%; }
+body{}
+	margin:0px;
+	padding:0px;
+	height:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+form { margin: 0px; }
+label { cursor: pointer; text-transform: uppercase; font-size: 1.0em; /* ADDED FOR FIELD LEVEL HELP FIX display: inline-block;*/ }
+/* ++++ Headings ++++ */
+h1, h2, h3, h4, h5, h6 { font-family: "Cabin Sans Bold"; font-weight: 500; color: #565656; }
+h1 { font-size: 2.2em; margin-top: 25px; font-family: "Crimson Regular"; }
+/* ++++ Base Components ++++ */
+#wrapper { min-height: 100%; margin-bottom: -187px; position: relative; }
+.container { background-color: #FFFFFF; }
+.lead { margin-top: -5px; font-size: 1.1em; line-height: inherit; }
+.page-title { position: relative; margin-left: 140px; }
+.button-bar { margin-left: 152px; }
+.button-bar-modal { margin-left: 5px; width: 99.5%; }
+.inner-button { margin-top: 30px; margin-left: 10px; }
+blockquote { padding: 10px 0px 0px 0px; margin: 0px, 0px, 0px; border-left: none; }
+blockquote p { font-family: 'Cabin Sans Bold'; margin-bottom: 10px; font-size: 0.9em; line-height: 20px; font-style: italic; }
+
+@media (min-width: 768px) {
+.my-custom-container{
+    width:950px;
+}}
+
+@media (min-width: 992px) {
+.my-custom-container{
+    width:950px;
+}}
+
+@media (min-width: 950px) {
+.my-custom-container{
+    width:950px;
+}}
+.login{
+min-height:500px;
+}
+
+
+.footer_login { background:url(../images/footer_bg.gif) center no-repeat;
+  height:15px;
+  float: none;
+  position: absolute;
+  bottom: 0px;
+  width:950px
+ }
+
+.header_login{ background:url(../images/.jpg) center no-repeat;
+ height:175px;
+ float: none;
+    top: 0px;
+  width:950px
+ }
+
+.tableView{ background:url(../images/search.png) center no-repeat;
+ 
+ }
+/* ++++ Header Layout ++++ */
+

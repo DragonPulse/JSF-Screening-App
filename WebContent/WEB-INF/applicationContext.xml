@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   		http://www.springframework.org/schema/tx 
+	   		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd		   
+			http://www.springframework.org/schema/util 
+			http://www.springframework.org/schema/util/spring-util-3.0.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+
+	default-lazy-init="false">
+
+
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="/WEB-INF/classes/jdbc.properties">
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>${jdbc_driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc_url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc_username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc_password}</value>
+		</property>
+		<!-- <property name="minPoolSize"><value>${jdbc_pool_min_size}</value></property> 
+			<property name="maxPoolSize"><value>${jdbc_pool_max_size}</value></property> 
+			<property name="maxIdleTime"><value>${jdbc_pool_timeout}</value></property> 
+			<property name="maxStatements"><value>${jdbc_pool_max_statements}</value></property> 
+			<property name="acquireIncrement"><value>${jdbc_pool_acquire_increment}</value></property> -->
+
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="configLocation">
+			<value>/WEB-INF/classes/hibernate.cfg.xml</value>
+		</property>
+		<property name="configurationClass">
+			<value>org.hibernate.cfg.AnnotationConfiguration</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">false</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.jdbc.use_get_generated_keys">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.c3p0.min_size">${jdbc_pool_min_size}</prop>
+				<prop key="hibernate.c3p0.max_size">${jdbc_pool_max_size}</prop>
+				<prop key="hibernate.c3p0.timeout">${jdbc_pool_timeout}</prop>
+				<prop key="hibernate.c3p0.max_statements">${jdbc_pool_max_statements}</prop>
+				<prop key="hibernate.c3p0.acquire_increment">${jdbc_pool_acquire_increment}</prop>
+
+			</props>
+		</property>
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="baseDao"
+		class="com.ness.screening.commons.dataaccess.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+
+
+	<!-- DAO Beans -->
+	<bean id="userDao" class="com.ness.screening.dao.impl.UserDaoImpl"
+		parent="baseDao">
+		<property name="userName" value="vijay" />
+	</bean>
+
+	<bean id="candidateDao" class="com.ness.screening.dao.impl.CandidateDaoImpl"
+		parent="baseDao">
+	</bean>
+
+	<bean id="vendorDao" class="com.ness.screening.dao.impl.VendorDaoImpl"
+		parent="baseDao">
+	</bean>
+
+	<bean id="appCodeDao" class="com.ness.screening.dao.impl.AppCodeDaoImpl"
+		parent="baseDao">
+	</bean>
+
+	<bean id="requirementDao" class="com.ness.screening.dao.impl.RequirementDaoImpl"
+		parent="baseDao">
+	</bean>
+	<bean id="clientDao" class="com.ness.screening.dao.impl.ClientDaoImpl"
+		parent="baseDao">
+	</bean>
+	<!-- Service Beans -->
+	<bean id="userService" class="com.ness.screening.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao" />
+	</bean>
+
+	<bean id="candidateService" class="com.ness.screening.service.impl.CandidateServiceImpl">
+		<property name="candidateDao" ref="candidateDao" />
+	</bean>
+
+	<bean id="vendorService" class="com.ness.screening.service.impl.VendorServiceImpl">
+		<property name="vendorDao" ref="vendorDao" />
+	</bean>
+
+	<bean id="appCodeService" class="com.ness.screening.service.impl.AppCodeServiceImpl">
+		<property name="appCodeDao" ref="appCodeDao" />
+	</bean>
+
+	<bean id="requirementService" class="com.ness.screening.service.impl.RequirementServiceImpl">
+		<property name="requirementDao" ref="requirementDao" />
+	</bean>
+	
+	<bean id="clientService" class="com.ness.screening.service.impl.ClientServiceImpl">
+		<property name="clientDao" ref="clientDao" />
+	</bean>
+</beans>
